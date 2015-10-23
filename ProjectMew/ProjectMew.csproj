@@ -247,6 +247,8 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\backbone.js" />
+    <Content Include="Scripts\backbone.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -270,6 +272,7 @@
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
     <Content Include="Fixtures\trips.json" />
     <None Include="Properties\PublishProfiles\mewtwo.pubxml" />
+    <Content Include="Scripts\backbone.min.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -279,14 +282,20 @@
     <Content Include="Scripts\knockout.validation.js" />
     <Content Include="Scripts\leaflet-0.7.3.js" />
     <Content Include="Scripts\leaflet-0.7.3.min.js" />
+    <Content Include="Scripts\Leaflet.MakiMarkers.js" />
     <Content Include="Scripts\map\App.js" />
     <Content Include="Scripts\map\Constants.js" />
     <Content Include="Scripts\map\Main.js" />
+    <Content Include="Scripts\map\Event.js" />
+    <Content Include="Scripts\map\Trip.js" />
+    <Content Include="Scripts\map\webpack.config.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\sammy-0.7.4.js" />
     <Content Include="Scripts\sammy-0.7.4.min.js" />
+    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\underscore.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Scripts\app\_run.js" />
     <Content Include="Scripts\app\app.datamodel.js" />
@@ -331,6 +340,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Views\Map\Index.cshtml" />
+    <Content Include="Scripts\underscore.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

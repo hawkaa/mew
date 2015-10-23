@@ -16,7 +16,7 @@
         "location": "Kyoto",
         "lon": 135.75,
         "lat": 35.02,
-        "description": "På vei opp til templene.",
+        "description": "Pa vei opp til templene.",
         "imgUrl": "http://i.imgur.com/p6oG4sy.jpg"
       },
       {
@@ -28,5 +28,5 @@
         "imgUrl": "http://i.imgur.com/FEQMih5.jpg"
       }
     ]
-  },
+  }
 ]
