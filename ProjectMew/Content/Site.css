@@ -1,29 +1,26 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #111;
+    color: #888;
+    font-family: 'Work Sans', sans-serif;
 }
 
-/* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
 }
 
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
 .dl-horizontal dt {
     white-space: normal;
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
 input,
 select,
 textarea {
     max-width: 280px;
 }
 
-/* Set padding to display errors that occur during databinding */
 .padding-error {
     padding-top: 20px;
 }
@@ -33,4 +30,131 @@ textarea {
         float: none;
         padding: 10px 15px;
     }
+}
+
+.m-navbar {
+    background-color: #1E1E1E;
+    text-transform: uppercase;
+    font-family: 'Work Sans', sans-serif;
+}
+
+.m-navbar a {
+    color: #888 !important;
+    transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+.m-navbar a:hover {
+    color: #BBB !important;
+}
+
+.m-error {
+    font: #F15054;
+}
+
+.m-label {
+    font-size: 18px;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+.m-textbox, .m-password, .m-textbox:focus, .m-password:focus {
+    border-radius: 0;
+    background-color: #1E1E1E;
+    border-color: transparent;
+    outline: none;
+    box-shadow: none;
+    color: #888;
+    font-size: 16px;
+}
+
+.m-textbox {
+    text-transform: uppercase;
+}
+
+.m-btn {
+    text-transform: uppercase;
+    border-radius: 0;
+    border-color: transparent;
+    background-color: #888;
+    color: #1E1E1E;
+    margin-right: 25px;
+    font-weight: 700;
+    transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+.m-btn:hover {
+    background-color: #1E1E1E;
+    color: #888;
+    border-color: transparent;
+}
+
+.m-login-form {
+    padding: 100px;
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.m-register {
+    display: inline-block;
+    text-align: right;
+    border-left: 1px solid #888;
+    padding-left: 30px;
+    margin-left: 30px;
+    height: 38px;
+    position: relative;
+    line-height: 36px;
+}
+
+#login {
+    position: relative;
+    left: -23px;
+}
+
+.facebook-register a {
+    color: #888 !important;
+    font-weight: 700;
+    transition: border 0.2s;
+    -moz-transition: border 0.2s;
+    -webkit-transition: border 0.2s;
+    -o-transition: border 0.2s;
+    text-transform: uppercase;
+}
+
+.facebook-register {
+    position: relative;
+    top: -50px;
+    left: -10px;
+}
+
+.m-inline-block {
+    display: inline-block;
+}
+
+.facebook-register a:hover {
+    text-decoration: none;
+    border-bottom: 1px solid #888;
+}
+
+#facebook-btn {
+    width: 35px;
+    height: 35px;
+    background-image: url("http://www.sbwire.com/images/facebook-icon.png");
+    background-size: 37px;
+    border-radius: 0;
+    background-position-y: -1px;
+    background-position-x: -1px;
+    border-color: transparent;
+    background-color: #111;
+}
+
+#m-footer {
+    text-align: center;
+    text-transform: uppercase;
 }
