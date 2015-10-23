@@ -1,4 +1,5 @@
-﻿var L = require('../leaflet-0.7.3.min.js')
+﻿var L = require('../leaflet-0.7.3.min.js');
+var Constants = require('./Constants.js');
 var App = {};
 
 App.run = function run() {
@@ -7,29 +8,14 @@ App.run = function run() {
 
     var map = L.map('map').setView([51.505, -0.09], 13);
 
-    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6IjZjNmRjNzk3ZmE2MTcwOTEwMGY0MzU3YjUzOWFmNWZhIn0.Y8bhBaUMqFiPrDRW9hieoQ', {
+    L.tileLayer('https://a.tiles.mapbox.com/v4/hawkaa.cig3wok3z26igszkwzpdc9mxs/{z}/{x}/{y}.png?access_token=' + Constants.MAPBOX_API_KEY, {
         maxZoom: 18,
-        attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
-            '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
-            'Imagery © <a href="http://mapbox.com">Mapbox</a>',
-        id: 'mapbox.streets'
+        id: 'hawkaa.cig3wok3z26igszkwzpdc9mxs'
     }).addTo(map);
 
+    map.setView([0.0, 0.0], 2);
 
-    L.marker([51.5, -0.09]).addTo(map)
-        .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
 
-    L.circle([51.508, -0.11], 500, {
-        color: 'red',
-        fillColor: '#f03',
-        fillOpacity: 0.5
-    }).addTo(map).bindPopup("I am a circle.");
-
-    L.polygon([
-        [51.509, -0.08],
-        [51.503, -0.06],
-        [51.51, -0.047]
-    ]).addTo(map).bindPopup("I am a polygon.");
 };
 
 App.setup = function setup() {

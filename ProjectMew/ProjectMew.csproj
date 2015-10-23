@@ -278,6 +278,7 @@
     <Content Include="Scripts\leaflet-0.7.3.js" />
     <Content Include="Scripts\leaflet-0.7.3.min.js" />
     <Content Include="Scripts\map\App.js" />
+    <Content Include="Scripts\map\Constants.js" />
     <Content Include="Scripts\map\Main.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
