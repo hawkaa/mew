@@ -1,0 +1,32 @@
+﻿[
+  {
+    "id": "trip1",
+    "title": "Tur til Japan og Thailand med Datateknikk",
+    "events": [
+      {
+        "date": "5. april",
+        "location": "Tokyo",
+        "lon": 139.69,
+        "lat": 35.68,
+        "description": "Her ser du Thea og meg i Tokyo.",
+        "imgUrl": "http://i.imgur.com/Mm0jjtR.jpg"
+      },
+      {
+        "date": "10. april",
+        "location": "Kyoto",
+        "lon": 135.75,
+        "lat": 35.02,
+        "description": "På vei opp til templene.",
+        "imgUrl": "http://i.imgur.com/p6oG4sy.jpg"
+      },
+      {
+        "date": "15. april",
+        "location": "Koh Samui",
+        "lon": 100.01359290,
+        "lat": 9.51201680,
+        "description": "Koselig bilde fra Koh Samui",
+        "imgUrl": "http://i.imgur.com/FEQMih5.jpg"
+      }
+    ]
+  },
+]
