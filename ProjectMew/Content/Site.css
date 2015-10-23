@@ -54,10 +54,21 @@ textarea {
     font: #F15054;
 }
 
+.m-header-row {
+    text-transform: uppercase;
+    font-size: 35px;
+    font-weight: 200;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .m-label {
-    font-size: 18px;
+    font-size: 16px;
+    width: 100%;
     font-weight: 400;
     text-transform: uppercase;
+    text-align: right !important;
+    white-space: nowrap;
 }
 
 .m-textbox, .m-password, .m-textbox:focus, .m-password:focus {
@@ -68,6 +79,7 @@ textarea {
     box-shadow: none;
     color: #888;
     font-size: 16px;
+    width: 100%;
 }
 
 .m-textbox {
@@ -94,9 +106,9 @@ textarea {
     border-color: transparent;
 }
 
-.m-login-form {
-    padding: 100px;
-    width: 700px;
+.m-form {
+    padding: 50px;
+    width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -112,9 +124,9 @@ textarea {
     line-height: 36px;
 }
 
-#login {
+#m-submit {
     position: relative;
-    left: -23px;
+    left: -27px;
 }
 
 .facebook-register a {
@@ -129,12 +141,16 @@ textarea {
 
 .facebook-register {
     position: relative;
-    top: -50px;
-    left: -10px;
+    top: -51px;
+    left: 20px;
 }
 
 .m-inline-block {
     display: inline-block;
+}
+
+.m-margin-bottom {
+    margin-bottom: 10px;
 }
 
 .facebook-register a:hover {
