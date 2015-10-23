@@ -10,8 +10,9 @@
             'underscore': __dirname + '\\..\\underscore.min.js',
             'backbone': __dirname + '\\..\\backbone.min.js',
             'jquery': __dirname + '\\..\\jquery-1.10.2.min.js',
-            'leaflet': __dirname + '\\..\\leaflet-0.7.3.min.js',
+            'leaflet': __dirname + '\\..\\leaflet.js',
             'makimarkers': __dirname + '\\..\\Leaflet.MakiMarkers.js',
+            'snakeanim': __dirname + '\\..\\L.Polyline.SnakeAnim.js',
         }
     }
 }

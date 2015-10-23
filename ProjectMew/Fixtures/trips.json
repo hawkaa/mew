@@ -28,5 +28,43 @@
         "imgUrl": "http://i.imgur.com/FEQMih5.jpg"
       }
     ]
+  },
+  {
+    "id": "trip2",
+    "title": "Utvekslingsopphold i USA",
+    "events": [
+      {
+        "date": "1. september",
+        "location": "Malibu Beach",
+        "lon": -118.6884200,
+        "lat": 34.0327900	,
+        "description": "Måtte teste temperaturen på vannet.",
+        "imgUrl": "http://i.imgur.com/hdc9W0c.jpg"
+      },
+      {
+        "date": "2. september",
+        "location": "Golden Gate",
+        "lon": -122.475,
+        "lat": 37.807,
+        "description": "Vakre golden gate. Denne gangen var det ikke tåke.",
+        "imgUrl": "http://i.imgur.com/keJGiI9.jpg"
+      },
+      {
+        "date": "3. september",
+        "location": "Mount Rushmore",
+        "lon": -103.38183449999997,
+        "lat": 43.9685522,
+        "description": "Måtte hilse på presidentene.",
+        "imgUrl": "http://i.imgur.com/N0FVgvY.jpg"
+      },
+      {
+        "date": "4. september",
+        "location": "Minneapolis",
+        "lon": -93.2650108,
+        "lat": 44.977753,
+        "description": "Tilbake i Minneapolis med mange gode venner.",
+        "imgUrl": "http://i.imgur.com/8GRKntQ.jpg"
+      }
+    ]
   }
 ]

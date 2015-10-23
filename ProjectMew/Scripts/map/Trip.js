@@ -2,6 +2,7 @@
 var Event = require('./Event.js');
 var Trip = Backbone.Model.extend({
     constructor: function constructor(attributes, options) {
+        Backbone.Model.prototype.constructor.call(this, attributes, options);
         var events = attributes.events;
         delete attributes.events;
         this.events = [];
