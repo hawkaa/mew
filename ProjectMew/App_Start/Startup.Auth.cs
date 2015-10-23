@@ -79,9 +79,9 @@ namespace ProjectMew
             //    consumerKey: "",
             //    consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //    appId: "",
-            //    appSecret: "");
+            app.UseFacebookAuthentication(
+                appId: "1509031722748942",
+                appSecret: "6b14b7beccd111f9c57cfd7c7059bfce");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
