@@ -331,6 +331,9 @@
     <Content Include="Onix.edmx.diagram">
       <DependentUpon>Onix.edmx</DependentUpon>
     </Content>
+    <Content Include="Fixtures\london.json" />
+    <Content Include="Fixtures\japan-thailand.json" />
+    <Content Include="Fixtures\usa.json" />
     <None Include="Properties\PublishProfiles\mewtwo.pubxml" />
     <Content Include="Scripts\backbone.min.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

@@ -64,6 +64,19 @@ App.setupEventListeners = function setupEventListeners() {
     $('body').on('hidden.bs.modal', '.modal', function () {
         $(this).removeData('bs.modal');
     });
+
+    $('.new-trip-btn').on('click', function () {
+        that.showInputModal();
+    });
+
+
+}
+
+App.showInputModal = function showInputModal() {
+    var modalContent = "<p>Lim inn reise i json-format:</p>";
+    modalContent += '<textarea class="trip-input" rows="20" cols="100"></textarea>';
+    modalContent += '<button class="trip-input-submit">Lagre</button>';
+    $('.modal-content').html(modalContent);
 }
 
 App.showModal = function showModal(event) {
@@ -182,7 +195,8 @@ App.createDummyData = function createDummyData() {
         type: 'POST',
         dataType: 'json',
         contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({
+        data: JSON.stringify(
+            {
             Title: "London med Marte",
             Events: [
                 {
