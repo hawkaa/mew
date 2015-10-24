@@ -9,11 +9,29 @@ using System.Web.Security;
 
 namespace ProjectMew.Controllers
 {
+    [Authorize]
     public class TripController : Controller
     {
         // GET: Trip
         public ActionResult Index()
         {
+            using (OnixEntities1 ctx = new OnixEntities1())
+            {
+                var userId = User.Identity.GetUserId();
+                var trips = from t in ctx.TripSet
+                            where t.User_Id == userId 
+                            select t;
+                var t3 = new List<Trip>();
+                foreach(Trip t2 in trips)
+                {
+                    t3.Add(t2);
+                }
+                string JsonData = Newtonsoft.Json.JsonConvert.SerializeObject(t3, Newtonsoft.Json.Formatting.Indented, new Newtonsoft.Json.JsonSerializerSettings
+                {
+                    ReferenceLoopHandling = Newtonsoft.Json.ReferenceLoopHandling.Ignore
+                });
+                return Content(JsonData);
+            }
             var file = System.IO.File.OpenRead(Server.MapPath("../Fixtures/trips.json"));
             return new FileStreamResult(file, "application/json");
         }

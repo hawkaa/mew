@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 10/24/2015 05:13:06
+-- Date Created: 10/24/2015 07:23:13
 -- Generated from EDMX file: C:\Users\hakon\Source\Repos\mew\ProjectMew\Onix.edmx
 -- --------------------------------------------------
 
@@ -31,11 +31,11 @@ GO
 IF OBJECT_ID(N'[dbo].[AspNetUsers]', 'U') IS NOT NULL
     DROP TABLE [dbo].[AspNetUsers];
 GO
-IF OBJECT_ID(N'[dbo].[TripSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[TripSet];
-GO
 IF OBJECT_ID(N'[dbo].[EventSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[EventSet];
+GO
+IF OBJECT_ID(N'[dbo].[TripSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[TripSet];
 GO
 
 -- --------------------------------------------------
@@ -60,24 +60,24 @@ CREATE TABLE [dbo].[AspNetUsers] (
 );
 GO
 
--- Creating table 'TripSet'
-CREATE TABLE [dbo].[TripSet] (
-    [Id] int IDENTITY(1,1) NOT NULL,
-    [Title] nvarchar(max)  NOT NULL,
-    [User_Id] nvarchar(128)  NOT NULL
-);
-GO
-
 -- Creating table 'EventSet'
 CREATE TABLE [dbo].[EventSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Location] nvarchar(max)  NOT NULL,
     [DateTime] datetime  NOT NULL,
-    [Longitude] float NOT NULL,
-    [Latitude] float NOT NULL,
+    [Longitude] float  NOT NULL,
+    [Latitude] float  NOT NULL,
     [Description] nvarchar(max)  NOT NULL,
     [ImageUrl] nvarchar(max)  NOT NULL,
-    [Trip_Id] int  NOT NULL
+    [TripId] int  NOT NULL
+);
+GO
+
+-- Creating table 'TripSet'
+CREATE TABLE [dbo].[TripSet] (
+    [Id] int IDENTITY(1,1) NOT NULL,
+    [Title] nvarchar(max)  NOT NULL,
+    [User_Id] nvarchar(128)  NOT NULL
 );
 GO
 
@@ -91,15 +91,15 @@ ADD CONSTRAINT [PK_AspNetUsers]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
--- Creating primary key on [Id] in table 'TripSet'
-ALTER TABLE [dbo].[TripSet]
-ADD CONSTRAINT [PK_TripSet]
-    PRIMARY KEY CLUSTERED ([Id] ASC);
-GO
-
 -- Creating primary key on [Id] in table 'EventSet'
 ALTER TABLE [dbo].[EventSet]
 ADD CONSTRAINT [PK_EventSet]
+    PRIMARY KEY CLUSTERED ([Id] ASC);
+GO
+
+-- Creating primary key on [Id] in table 'TripSet'
+ALTER TABLE [dbo].[TripSet]
+ADD CONSTRAINT [PK_TripSet]
     PRIMARY KEY CLUSTERED ([Id] ASC);
 GO
 
@@ -122,19 +122,19 @@ ON [dbo].[TripSet]
     ([User_Id]);
 GO
 
--- Creating foreign key on [Trip_Id] in table 'EventSet'
+-- Creating foreign key on [TripId] in table 'EventSet'
 ALTER TABLE [dbo].[EventSet]
-ADD CONSTRAINT [FK_EventTrip]
-    FOREIGN KEY ([Trip_Id])
+ADD CONSTRAINT [FK_TripEvent]
+    FOREIGN KEY ([TripId])
     REFERENCES [dbo].[TripSet]
         ([Id])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
--- Creating non-clustered index for FOREIGN KEY 'FK_EventTrip'
-CREATE INDEX [IX_FK_EventTrip]
+-- Creating non-clustered index for FOREIGN KEY 'FK_TripEvent'
+CREATE INDEX [IX_FK_TripEvent]
 ON [dbo].[EventSet]
-    ([Trip_Id]);
+    ([TripId]);
 GO
 
 -- --------------------------------------------------

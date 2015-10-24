@@ -21,8 +21,6 @@ namespace ProjectMew
         public double Latitude { get; set; }
         public string Description { get; set; }
         public string ImageUrl { get; set; }
-        public int Trip_Id { get; set; }
-    
-        public virtual Trip Trip { get; set; }
+        public int TripId { get; set; }
     }
 }

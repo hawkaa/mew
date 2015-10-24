@@ -9,6 +9,9 @@ var App = {};
 App.run = function run() {
 
     this.setup();
+    
+    //this.createDummyData();
+
 
     this.trips = [];
 
