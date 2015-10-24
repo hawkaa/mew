@@ -45,7 +45,6 @@ App.run = function run() {
                     that.loadTrip(that_2);
                 })
                 .addTo(that.map);
-            
             }
         });
     });
@@ -58,7 +57,6 @@ App.setupEventListeners = function setupEventListeners() {
         var event = $.grep(that.activeTrip.events, function(n, i) {
             return n.cid == cid;
         })[0].attributes;
-        console.log(event);
         that.showModal(event);
     });
 
@@ -69,9 +67,9 @@ App.setupEventListeners = function setupEventListeners() {
 
 App.showModal = function showModal(event) {
 
-    var modalContent = "<div class='modal-img-wrapper'><img class='modal-img' src='" + event.imgUrl + "' /></div>"
-                        + "<div class='modal-time-and-place'>" + event.date + ", " + event.location + "</div>"
-                        + "<div class='modal-description'>" + event.description + "</div></div>";
+    var modalContent = "<div class='modal-img-wrapper'><img class='modal-img' src='" + event.ImageUrl + "' /></div>"
+                        + "<div class='modal-time-and-place'>" + event.DateTime + ", " + event.Location + "</div>"
+                        + "<div class='modal-description'>" + event.Description + "</div></div>";
 
     $('.modal-content').html(modalContent);
     $('#test-modal').modal('show');
@@ -114,7 +112,7 @@ App.showPopups = function showPopups() {
                 closeOnClick: false
             })
             .setLatLng(this.getCoordinates())
-            .setContent('<img data-event-id="' + this.cid + '" class="popup-image" data-toggle="modal" data-target="#test-modal" src="' + this.get('imgUrl') + '" />');
+            .setContent('<img data-event-id="' + this.cid + '" class="popup-image" data-toggle="modal" data-target="#test-modal" src="' + this.get('ImageUrl') + '" />');
         layers.push(layer);
     });
     this.activePopupsLayer = L.layerGroup(layers);
