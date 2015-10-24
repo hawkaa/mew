@@ -32,8 +32,6 @@ namespace ProjectMew.Controllers
                 });
                 return Content(JsonData);
             }
-            var file = System.IO.File.OpenRead(Server.MapPath("../Fixtures/trips.json"));
-            return new FileStreamResult(file, "application/json");
         }
 
         // GET: Trip/Details/5
@@ -56,7 +54,7 @@ namespace ProjectMew.Controllers
                 trip.User_Id = c;
                 ctx.SaveChanges();
             }
-            return View();
+            return Content("OK");
         }
 
         // GET: Trip/Edit/5
