@@ -13,6 +13,11 @@ div.img-popup img {
     height: 100%;
 }
 
+
+.leaflet-container {
+    background: #1E1E1E;
+}
+
 .img-popup .leaflet-popup-content-wrapper {
   background:rgba(0,0,0,0.0);
   color:rgba(0,0,0,0.0);

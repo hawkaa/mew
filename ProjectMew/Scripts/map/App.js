@@ -21,7 +21,10 @@ App.run = function run() {
     this.activePopupsLayer = null;
     this.markers = [];
 
-    this.map = L.map('map');
+    this.map = L.map('map', {
+        zoomControl: false,
+        attributionControl: false
+    });
 
     L.tileLayer('https://a.tiles.mapbox.com/v4/hawkaa.cig3wok3z26igszkwzpdc9mxs/{z}/{x}/{y}.png?access_token=' + Constants.MAPBOX_API_KEY, {
         maxZoom: 18,
