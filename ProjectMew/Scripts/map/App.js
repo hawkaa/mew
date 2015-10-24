@@ -14,6 +14,7 @@ App.run = function run() {
 
     this.activeTrip = null;
     this.activeRouteLayer = null;
+    this.activePopupsLayer = null;
 
     this.map = L.map('map');
 
@@ -26,24 +27,24 @@ App.run = function run() {
 
     var that = this;
     this.loadTrips().then(function(trips) {
-        for (var i = 0; i < trips.length; ++i) {
-            var trip = trips[i];
-            for (var j = 0; j < trip.events.length; ++j) {
+        $.each(trips, function () {
+            var that_2 = this;
+            for (var j = 0; j < this.events.length; ++j) {
                 var icon = L.MakiMarkers.icon({
                     icon: "circle-stroked",
-                    color: trip.get('color')
+                    color: this.get('color')
                 });
-                var event = trip.events[j];
+                var event = this.events[j];
                 L.marker(event.getCoordinates(), {
                     icon: icon
                 })
                 .on('click', function () {
-                    that.zoomToTrip(trip);
+                    that.loadTrip(that_2);
                 })
                 .addTo(that.map);
             
             }
-        }
+        });
     });
 
 };
@@ -52,18 +53,52 @@ App.zoomToBounds = function zoomToBounds(bounds) {
     var ret = $.Deferred();
     var that = this;
     setTimeout(function () {
-        that.map.fitBounds(bounds);
         ret.resolve();
     }, Constants.ZOOM_ANIMATION_MS);
+    that.map.fitBounds(bounds, {
+        padding: [250, 250]
+    });
     return ret;
 };
 
-App.zoomToTrip = function zoomToTrip(trip) {
-
+App.loadTrip = function loadTrip(trip) {
     this.activeTrip = trip;
+    /* remove previous layers*/
+    if (this.activePopupsLayer) {
+        this.activePopupsLayer.remove();
+    }
     if (this.activeRouteLayer) {
         this.activeRouteLayer.remove();
     }
+
+    App.zoomToTrip().then(function() {
+        return App.showPopups();
+    });
+};
+
+App.showPopups = function showPopups() {
+    var that = this;
+    var layers = [];
+    $.each(this.activeTrip.events, function () {
+        var layer = L.popup({
+            className: 'img-popup',
+            closeButton: false,
+            closeOnClick: false
+        })
+        .setLatLng(this.getCoordinates())
+        .setContent('<img src="' + this.get('imgUrl') + '" />');
+        layers.push(layer);
+
+    });
+    this.activePopupsLayer = L.layerGroup(layers);
+    console.log(this.activePopupsLayer);
+    this.map.addLayer(this.activePopupsLayer);
+
+};
+
+App.zoomToTrip = function zoomToTrip() {
+    var trip = this.activeTrip;
+    var ret = $.Deferred();
 
     var polyLines = [];
     var bounds = L.latLngBounds(trip.events[0].getCoordinates(), trip.events[0].getCoordinates());
@@ -79,12 +114,15 @@ App.zoomToTrip = function zoomToTrip(trip) {
     }
     this.activeRouteLayer = L.layerGroup(polyLines, {
         snakingPause: 200
+    }).on('snakeend', function() {
+        ret.resolve();
     });
 
     var that = this;
     this.zoomToBounds(bounds).then(function() {
         that.activeRouteLayer.addTo(that.map).snakeIn();
     });
+    return ret;
 };
 
 App.setup = function setup() {
