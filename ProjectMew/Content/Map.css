@@ -51,6 +51,50 @@ div.img-popup img {
     
 }
 
+.modal-title {
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.textarea-wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.m-textarea {
+    border-color: transparent;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.btn-wrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.m-modal-btn {
+    background-color: #545454;
+    color: #BBB;
+    border-color: transparent;
+    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: 700;
+    padding: 7px;
+    width: 100px;
+    transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -o-transition: all 0.2s;
+    margin-bottom: 20px;
+}
+
+.m-modal-btn:hover {
+    color: #545454;
+    background-color: #BBB;
+}
+
 .modal-time-and-place {
     margin-top: 5px;
     width: 100%;

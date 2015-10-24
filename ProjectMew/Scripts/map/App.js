@@ -73,9 +73,9 @@ App.setupEventListeners = function setupEventListeners() {
 }
 
 App.showInputModal = function showInputModal() {
-    var modalContent = "<p>Lim inn reise i json-format:</p>";
-    modalContent += '<textarea class="trip-input" rows="20" cols="100"></textarea>';
-    modalContent += '<button class="trip-input-submit">Lagre</button>';
+    var modalContent = "<div class='modal-title'>Paste trip info in JSON-format</div>";
+    modalContent += '<div class="textarea-wrapper"><textarea class="trip-input m-textarea" rows="20" cols="200"></textarea></div>';
+    modalContent += '<div class="btn-wrapper"><button class="trip-input-submit m-modal-btn">Save</button></div>';
     $('.modal-content').html(modalContent);
 }
 
