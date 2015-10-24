@@ -9,6 +9,7 @@ namespace ProjectMew.Controllers
     public class MapController : Controller
     {
         // GET: Map
+        [Authorize]
         public ActionResult Index()
         {
             return View();

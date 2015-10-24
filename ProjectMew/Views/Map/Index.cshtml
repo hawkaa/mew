@@ -8,10 +8,28 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    @Styles.Render("~/Content/leaflet.css")
-    @Styles.Render("~/Content/Map.css")
+    @Styles.Render("~/Content/css")
 </head>
 <body>
+    <div class="navbar navbar-inverse navbar-fixed-top m-navbar">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Project Mew", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse m-navbar">
+                <ul class="nav navbar-nav m-navbar-element">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "HelpPage" }, null)</li>
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
     <div id="map"></div>
     @Scripts.Render("~/Scripts/map/bundle.js")
 </body>
