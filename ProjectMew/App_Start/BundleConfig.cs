@@ -40,6 +40,8 @@ namespace ProjectMew
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
                  "~/Content/bootstrap.css",
+                 "~/Content/leaflet.css",
+                 "~/Content/Map.css",
                  "~/Content/Site.css"));
         }
     }

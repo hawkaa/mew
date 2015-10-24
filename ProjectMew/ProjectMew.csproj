@@ -228,7 +228,9 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\MapController.cs" />
     <Compile Include="Controllers\MeController.cs" />
+    <Compile Include="Controllers\TripController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -251,11 +253,19 @@
     <Content Include="Areas\HelpPage\Views\_ViewStart.cshtml" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\m-login.css" />
+    <Content Include="Content\images\layers-2x.png" />
+    <Content Include="Content\images\layers.png" />
+    <Content Include="Content\images\marker-icon-2x.png" />
+    <Content Include="Content\images\marker-icon.png" />
+    <Content Include="Content\images\marker-shadow.png" />
+    <Content Include="Content\leaflet.css" />
+    <Content Include="Content\Map.css" />
     <Content Include="Content\Site.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\backbone.js" />
+    <Content Include="Scripts\backbone.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\HelpPage\Views\Web.config" />
@@ -277,7 +287,9 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\CollectionModelDescription.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
+    <Content Include="Fixtures\trips.json" />
     <None Include="Properties\PublishProfiles\mewtwo.pubxml" />
+    <Content Include="Scripts\backbone.min.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -285,11 +297,24 @@
     <Content Include="Scripts\knockout-2.3.0.js" />
     <Content Include="Scripts\knockout.validation.debug.js" />
     <Content Include="Scripts\knockout.validation.js" />
+    <Content Include="Scripts\L.Polyline.SnakeAnim.js" />
+    <Content Include="Scripts\leaflet-0.7.3.js" />
+    <Content Include="Scripts\leaflet-0.7.3.min.js" />
+    <Content Include="Scripts\leaflet.js" />
+    <Content Include="Scripts\Leaflet.MakiMarkers.js" />
+    <Content Include="Scripts\map\App.js" />
+    <Content Include="Scripts\map\Constants.js" />
+    <Content Include="Scripts\map\Main.js" />
+    <Content Include="Scripts\map\Event.js" />
+    <Content Include="Scripts\map\Trip.js" />
+    <Content Include="Scripts\map\webpack.config.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\sammy-0.7.4.js" />
     <Content Include="Scripts\sammy-0.7.4.min.js" />
+    <Content Include="Scripts\underscore.js" />
+    <Content Include="Scripts\underscore.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Scripts\app\_run.js" />
     <Content Include="Scripts\app\app.datamodel.js" />
@@ -333,9 +358,12 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="Views\Map\Index.cshtml" />
+    <Content Include="Scripts\underscore.min.map" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Trip\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

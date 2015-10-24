@@ -1,0 +1,70 @@
+﻿[
+  {
+    "id": "trip1",
+    "title": "Tur til Japan og Thailand med Datateknikk",
+    "events": [
+      {
+        "date": "5. april",
+        "location": "Tokyo",
+        "lon": 139.69,
+        "lat": 35.68,
+        "description": "Her ser du Thea og meg i Tokyo.",
+        "imgUrl": "http://i.imgur.com/Mm0jjtR.jpg"
+      },
+      {
+        "date": "10. april",
+        "location": "Kyoto",
+        "lon": 135.75,
+        "lat": 35.02,
+        "description": "Pa vei opp til templene.",
+        "imgUrl": "http://i.imgur.com/p6oG4sy.jpg"
+      },
+      {
+        "date": "15. april",
+        "location": "Koh Samui",
+        "lon": 100.01359290,
+        "lat": 9.51201680,
+        "description": "Koselig bilde fra Koh Samui",
+        "imgUrl": "http://i.imgur.com/FEQMih5.jpg"
+      }
+    ]
+  },
+  {
+    "id": "trip2",
+    "title": "Utvekslingsopphold i USA",
+    "events": [
+      {
+        "date": "1. september",
+        "location": "Malibu Beach",
+        "lon": -118.6884200,
+        "lat": 34.0327900	,
+        "description": "Måtte teste temperaturen på vannet.",
+        "imgUrl": "http://i.imgur.com/hdc9W0c.jpg"
+      },
+      {
+        "date": "2. september",
+        "location": "Golden Gate",
+        "lon": -122.475,
+        "lat": 37.807,
+        "description": "Vakre golden gate. Denne gangen var det ikke tåke.",
+        "imgUrl": "http://i.imgur.com/keJGiI9.jpg"
+      },
+      {
+        "date": "3. september",
+        "location": "Mount Rushmore",
+        "lon": -103.38183449999997,
+        "lat": 43.9685522,
+        "description": "Måtte hilse på presidentene.",
+        "imgUrl": "http://i.imgur.com/N0FVgvY.jpg"
+      },
+      {
+        "date": "4. september",
+        "location": "Minneapolis",
+        "lon": -93.2650108,
+        "lat": 44.977753,
+        "description": "Tilbake i Minneapolis med mange gode venner.",
+        "imgUrl": "http://i.imgur.com/8GRKntQ.jpg"
+      }
+    ]
+  }
+]
