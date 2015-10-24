@@ -54,7 +54,7 @@ namespace ProjectMew.Controllers
                 trip.User_Id = c;
                 ctx.SaveChanges();
             }
-            return Content("OK");
+            return Content("");
         }
 
         // GET: Trip/Edit/5

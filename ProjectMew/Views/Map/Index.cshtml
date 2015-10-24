@@ -20,7 +20,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <div class="navbar-brand">Project Mew</div>
+                <div class="navbar-brand">Project <span style="color: #F15054">Mew</span></div>
             </div>
             <div class="navbar-collapse collapse m-navbar">
                 @Html.Partial("_LoginPartial")
@@ -36,9 +36,10 @@
         </div>
     </div>
 
-<div id="map"></div>
-<div class="new-trip-btn">
-    <div id="m-plus" data-toggle="modal" data-target="#test-modal">+</div></div>
+    <div id="map"></div>
+    <div class="new-trip-btn">
+        <div id="m-plus" data-toggle="modal" data-target="#test-modal">+</div>
+    </div>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/Scripts/map/bundle.js")
