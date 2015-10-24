@@ -150,4 +150,111 @@ App.loadTrips = function loadTrips() {
     return def;
 };
 
+App.createDummyData = function createDummyData() {
+    $.ajax({
+        url: '/Trip/Create/',
+        type: 'POST',
+        dataType: 'json',
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({
+            Title: "London med Marte",
+            Events: [
+                {
+                    Location: "Big Ben",
+                    DateTime: "2014-06-01T00:00:00.000Z",
+                    Longitude: -0.126236,
+                    Latitude: 51.500152,
+                    Description: "Her er et bilde av Big Ben",
+                    ImageUrl: "http://cdn.londonandpartners.com/visit/london-organisations/big-ben/63602-640x360-bigben_tilt_640.jpg"
+                },
+                {
+                    Location: "Tower of London",
+                    DateTime: "2014-06-02T00:00:00.000Z",
+                    Longitude: -0.076188,
+                    Latitude: 51.507937,
+                    Description: "Her er et bilde av Tower of London",
+                    ImageUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Tower_of_London_White_Tower.jpg"
+                }
+            ]
+        })
+    });
+    $.ajax({
+        url: '/Trip/Create/',
+        type: 'POST',
+        dataType: 'json',
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({
+            Title: "Tur til Japan og Thailand med Datateknikk",
+            Events: [
+                {
+                    Location: "Tokyo",
+                    DateTime: "2013-04-01T00:00:00.000Z",
+                    Longitude: 139.69,
+                    Latitude: 35.68,
+                    Description: "Her ser du Thea og meg i Tokyo.",
+                    ImageUrl: "http://i.imgur.com/Mm0jjtR.jpg"
+                },
+                {
+                    Location: "Kyoto",
+                    DateTime: "2013-04-10T00:00:00.000Z",
+                    Longitude: 135.75,
+                    Latitude: 35.02,
+                    Description: "På vei opp til templene.",
+                    ImageUrl: "http://i.imgur.com/p6oG4sy.jpg"
+                },
+                {
+                    Location: "Koh Samui",
+                    DateTime: "2013-04-15T00:00:00.000Z",
+                    Longitude: 100.01359290,
+                    Latitude: 9.51201680,
+                    Description: "Koselig bilde fra Koh Samui",
+                    ImageUrl: "http://i.imgur.com/FEQMih5.jpg"
+                }
+            ]
+        })
+    });
+    $.ajax({
+        url: '/Trip/Create/',
+        type: 'POST',
+        dataType: 'json',
+        contentType: "application/json; charset=utf-8",
+        data: JSON.stringify({
+            Title: "Utvekslingsopphold i USA",
+            Events: [
+                {
+                    Location: "Malibu Beach",
+                    DateTime: "2014-08-01T00:00:00.000Z",
+                    Longitude: -118.6884200,
+                    Latitude: 34.0327900	,
+                    Description: "Måtte teste temperaturen på vannet",
+                    ImageUrl: "http://i.imgur.com/hdc9W0c.jpg"
+                },
+                {
+                    Location: "Golden Gate",
+                    DateTime: "2014-08-02T00:00:00.000Z",
+                    Longitude: -122.475,
+                    Latitude: 37.807,
+                    Description: "Vakre golden gate. Denne gangen var det ikke tåke.",
+                    ImageUrl: "http://i.imgur.com/keJGiI9.jpg"
+                },
+                {
+                    Location: "Mount Rushmore",
+                    DateTime: "2014-08-03T00:00:00.000Z",
+                    Longitude: -103.38183449999997,
+                    Latitude: 43.9685522,
+                    Description: "Måtte hilse på presidentene.",
+                    ImageUrl: "http://i.imgur.com/N0FVgvY.jpg"
+                  },
+                  {
+                    Location: "Minneapolis",
+                    DateTime: "2014-08-04T00:00:00.000Z",
+                    Longitude: -93.2650108,
+                    Latitude: 44.977753,
+                    Description: "Tilbake i Minneapolis med mange gode venner.",
+                    ImageUrl: "http://i.imgur.com/8GRKntQ.jpg"
+                  }
+            ]
+        })
+    });
+};
 module.exports = App;

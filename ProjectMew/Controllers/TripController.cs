@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Microsoft.AspNet.Identity;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace ProjectMew.Controllers
 {
@@ -22,26 +24,21 @@ namespace ProjectMew.Controllers
             return View();
         }
 
-        // GET: Trip/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
 
         // POST: Trip/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create()
         {
-            try
+            using (OnixEntities1 ctx = new OnixEntities1())
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                String jsonData = new StreamReader(this.Request.InputStream).ReadToEnd();
+                var trip = Newtonsoft.Json.JsonConvert.DeserializeObject<Trip>(jsonData);
+                ctx.TripSet.Add(trip);
+                var c = User.Identity.GetUserId();
+                trip.User_Id = c;
+                ctx.SaveChanges();
             }
-            catch
-            {
-                return View();
-            }
+            return View();
         }
 
         // GET: Trip/Edit/5
