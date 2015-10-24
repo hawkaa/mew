@@ -4,6 +4,7 @@ var $ = require('jquery');
 var Trip = require('./Trip.js');
 var MakiMarkers = require('makimarkers');
 var SnakeAnim = require('snakeanim');
+var moment = require('moment');
 var App = {};
 
 App.run = function run() {
@@ -66,9 +67,8 @@ App.setupEventListeners = function setupEventListeners() {
 }
 
 App.showModal = function showModal(event) {
-
     var modalContent = "<div class='modal-img-wrapper'><img class='modal-img' src='" + event.ImageUrl + "' /></div>"
-                        + "<div class='modal-time-and-place'>" + event.DateTime + ", " + event.Location + "</div>"
+                        + "<div class='modal-time-and-place'>" + moment(event.DateTime).format('LL') + ", " + event.Location + "</div>"
                         + "<div class='modal-description'>" + event.Description + "</div></div>";
 
     $('.modal-content').html(modalContent);
@@ -150,6 +150,7 @@ App.zoomToTrip = function zoomToTrip() {
 };
 
 App.setup = function setup() {
+    moment.lang('no');
     L.Icon.Default.imagePath = '/Content/images';
     this.setupEventListeners();
 };

@@ -23,13 +23,14 @@ div.img-popup img {
   color:rgba(0,0,0,0.0);
   }
 .img-popup .leaflet-popup-content {
-  width:200px;
-  max-width:200px;
-  max-height:200px;
+  width:150px;
+  max-width:150px;
+  max-height:150px;
   margin: 0;
 }
-.img-popup .leaflet-popup-tip-container {
-    display: none;
+.img-popup .leaflet-popup-tip-container, .img-popup .leaflet-popup-tip{
+    display:none;
+    background: rgba(0,0,0,0);
 }
 .img-popup img {
     border-radius: 15px;
