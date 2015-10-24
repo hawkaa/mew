@@ -69,6 +69,17 @@ App.setupEventListeners = function setupEventListeners() {
         that.showInputModal();
     });
 
+    $('body').on('click', '.trip-input-submit', function () {
+        var data = $('.trip-input').val();
+        $.ajax({
+            url: '/Trip/Create/',
+            type: 'POST',
+            dataType: 'json',
+            contentType: "application/json; charset=utf-8",
+            data: data
+        });
+    });
+
 
 }
 
