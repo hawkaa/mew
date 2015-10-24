@@ -19,8 +19,12 @@ App.run = function run() {
     this.activeTrip = null;
     this.activeRouteLayer = null;
     this.activePopupsLayer = null;
+    this.markers = [];
 
-    this.map = L.map('map');
+    this.map = L.map('map', {
+        zoomControl: false,
+        attributionControl: false
+    });
 
     L.tileLayer('https://a.tiles.mapbox.com/v4/hawkaa.cig3wok3z26igszkwzpdc9mxs/{z}/{x}/{y}.png?access_token=' + Constants.MAPBOX_API_KEY, {
         maxZoom: 18,
@@ -28,27 +32,7 @@ App.run = function run() {
     }).addTo(this.map);
 
     this.map.setView([0.0, 0.0], 2);
-
-    var that = this;
-    this.loadTrips().then(function(trips) {
-        $.each(trips, function () {
-            var that_2 = this;
-            for (var j = 0; j < this.events.length; ++j) {
-                var icon = L.MakiMarkers.icon({
-                    icon: "circle-stroked",
-                    color: this.get('color')
-                });
-                var event = this.events[j];
-                L.marker(event.getCoordinates(), {
-                    icon: icon
-                })
-                .on('click', function () {
-                    that.loadTrip(that_2);
-                })
-                .addTo(that.map);
-            }
-        });
-    });
+    this.reloadTrips();
 };
 
 App.setupEventListeners = function setupEventListeners() {
@@ -74,19 +58,46 @@ App.setupEventListeners = function setupEventListeners() {
         $.ajax({
             url: '/Trip/Create/',
             type: 'POST',
-            dataType: 'json',
-            contentType: "application/json; charset=utf-8",
             data: data
+        }).then(function() {
+            that.reloadTrips();
         });
     });
-
-
 }
+
+App.reloadTrips = function reloadTrips() {
+    var that = this;
+    for (var i = 0; i < that.markers.length; ++i) {
+        that.markers[i].remove();
+    }
+    that.markers = [];
+
+    this.loadTrips().then(function(trips) {
+        $.each(trips, function () {
+            var that_2 = this;
+            for (var j = 0; j < this.events.length; ++j) {
+                var icon = L.MakiMarkers.icon({
+                    icon: "circle-stroked",
+                    color: this.get('color')
+                });
+                var event = this.events[j];
+                var marker = L.marker(event.getCoordinates(), {
+                    icon: icon
+                })
+                .on('click', function () {
+                    that.loadTrip(that_2);
+                })
+                .addTo(that.map);
+                that.markers.push(marker);
+            }
+        });
+    });
+};
 
 App.showInputModal = function showInputModal() {
     var modalContent = "<div class='modal-title'>Paste trip info in JSON-format</div>";
     modalContent += '<div class="textarea-wrapper"><textarea class="trip-input m-textarea" rows="20" cols="200"></textarea></div>';
-    modalContent += '<div class="btn-wrapper"><button class="trip-input-submit m-modal-btn">Save</button></div>';
+    modalContent += '<div class="btn-wrapper"><button data-dismiss="modal" class="trip-input-submit m-modal-btn">Save</button></div>';
     $('.modal-content').html(modalContent);
 }
 
@@ -96,7 +107,6 @@ App.showModal = function showModal(event) {
                         + "<div class='modal-description'>" + event.Description + "</div></div>";
 
     $('.modal-content').html(modalContent);
-    $('#test-modal').modal('show');
 }
 
 App.zoomToBounds = function zoomToBounds(bounds) {
@@ -198,114 +208,5 @@ App.loadTrips = function loadTrips() {
         def.resolve(trips);
     });
     return def;
-};
-
-App.createDummyData = function createDummyData() {
-    $.ajax({
-        url: '/Trip/Create/',
-        type: 'POST',
-        dataType: 'json',
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify(
-            {
-            Title: "London med Marte",
-            Events: [
-                {
-                    Location: "Big Ben",
-                    DateTime: "2014-06-01T00:00:00.000Z",
-                    Longitude: -0.126236,
-                    Latitude: 51.500152,
-                    Description: "Her er et bilde av Big Ben",
-                    ImageUrl: "http://cdn.londonandpartners.com/visit/london-organisations/big-ben/63602-640x360-bigben_tilt_640.jpg"
-                },
-                {
-                    Location: "Tower of London",
-                    DateTime: "2014-06-02T00:00:00.000Z",
-                    Longitude: -0.076188,
-                    Latitude: 51.507937,
-                    Description: "Her er et bilde av Tower of London",
-                    ImageUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Tower_of_London_White_Tower.jpg"
-                }
-            ]
-        })
-    });
-    $.ajax({
-        url: '/Trip/Create/',
-        type: 'POST',
-        dataType: 'json',
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({
-            Title: "Tur til Japan og Thailand med Datateknikk",
-            Events: [
-                {
-                    Location: "Tokyo",
-                    DateTime: "2013-04-01T00:00:00.000Z",
-                    Longitude: 139.69,
-                    Latitude: 35.68,
-                    Description: "Her ser du Thea og meg i Tokyo.",
-                    ImageUrl: "http://i.imgur.com/Mm0jjtR.jpg"
-                },
-                {
-                    Location: "Kyoto",
-                    DateTime: "2013-04-10T00:00:00.000Z",
-                    Longitude: 135.75,
-                    Latitude: 35.02,
-                    Description: "På vei opp til templene.",
-                    ImageUrl: "http://i.imgur.com/p6oG4sy.jpg"
-                },
-                {
-                    Location: "Koh Samui",
-                    DateTime: "2013-04-15T00:00:00.000Z",
-                    Longitude: 100.01359290,
-                    Latitude: 9.51201680,
-                    Description: "Koselig bilde fra Koh Samui",
-                    ImageUrl: "http://i.imgur.com/FEQMih5.jpg"
-                }
-            ]
-        })
-    });
-    $.ajax({
-        url: '/Trip/Create/',
-        type: 'POST',
-        dataType: 'json',
-        contentType: "application/json; charset=utf-8",
-        data: JSON.stringify({
-            Title: "Utvekslingsopphold i USA",
-            Events: [
-                {
-                    Location: "Malibu Beach",
-                    DateTime: "2014-08-01T00:00:00.000Z",
-                    Longitude: -118.6884200,
-                    Latitude: 34.0327900	,
-                    Description: "Måtte teste temperaturen på vannet",
-                    ImageUrl: "http://i.imgur.com/hdc9W0c.jpg"
-                },
-                {
-                    Location: "Golden Gate",
-                    DateTime: "2014-08-02T00:00:00.000Z",
-                    Longitude: -122.475,
-                    Latitude: 37.807,
-                    Description: "Vakre golden gate. Denne gangen var det ikke tåke.",
-                    ImageUrl: "http://i.imgur.com/keJGiI9.jpg"
-                },
-                {
-                    Location: "Mount Rushmore",
-                    DateTime: "2014-08-03T00:00:00.000Z",
-                    Longitude: -103.38183449999997,
-                    Latitude: 43.9685522,
-                    Description: "Måtte hilse på presidentene.",
-                    ImageUrl: "http://i.imgur.com/N0FVgvY.jpg"
-                  },
-                  {
-                    Location: "Minneapolis",
-                    DateTime: "2014-08-04T00:00:00.000Z",
-                    Longitude: -93.2650108,
-                    Latitude: 44.977753,
-                    Description: "Tilbake i Minneapolis med mange gode venner.",
-                    ImageUrl: "http://i.imgur.com/8GRKntQ.jpg"
-                  }
-            ]
-        })
-    });
 };
 module.exports = App;
