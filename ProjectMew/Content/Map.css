@@ -34,3 +34,37 @@ div.img-popup img {
 .img-popup img {
     border-radius: 15px;
 }
+
+.modal-content {
+    background-color: #DDD;
+    color: #1E1E1E;
+}
+
+.modal-img-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
+.modal-img {
+    width: 100%;
+    
+}
+
+.modal-time-and-place {
+    margin-top: 5px;
+    width: 100%;
+    text-align: right;
+    padding: 5px 15px;
+    line-height: 12px;
+    font-family: 'Merriweather', sans-serif;
+    font-weight: 400;
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.modal-description {
+    width: 100%;
+    padding: 0 30px;
+    font-family: 'Work Sans', sans-serif;
+    margin-bottom: 10px;
+}
