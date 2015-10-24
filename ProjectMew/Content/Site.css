@@ -170,6 +170,43 @@ textarea {
     background-color: #111;
 }
 
+.new-trip-btn {
+    width: 100%;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+    z-index: 500;
+    padding-bottom: 20px;
+    padding-right: 20px;
+}
+
+#m-plus {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    line-height: 35px;
+    padding-left: 11px;
+    background-color: #F15054;
+    color: #FFF;
+    border-radius: 100%;
+    border: 2px solid #F15054;
+    width: 40px;
+    height: 40px;
+    font-weight: 700;
+    font-size: 22px;
+    transition: all 0.2s;
+    -webkit-transition: all 0.2s;
+    -moz-transition: all 0.2s;
+    -o-transition: all 0.2s;
+}
+
+#m-plus:hover {
+    cursor: pointer;
+    background-color: #b22222;
+    border-color: #b22222;
+} 
+
 #m-footer {
     text-align: center;
     text-transform: uppercase;
