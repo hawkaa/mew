@@ -1,0 +1,29 @@
+﻿{
+    Title: "Tur til Japan og Thailand med Datateknikk",
+    Events: [
+        {
+            Location: "Tokyo",
+            DateTime: "2013-04-01T00:00:00.000Z",
+            Longitude: 139.69,
+            Latitude: 35.68,
+            Description: "Her ser du Thea og meg i Tokyo.",
+            ImageUrl: "http://i.imgur.com/Mm0jjtR.jpg"
+        },
+        {
+            Location: "Kyoto",
+            DateTime: "2013-04-10T00:00:00.000Z",
+            Longitude: 135.75,
+            Latitude: 35.02,
+            Description: "På vei opp til templene.",
+            ImageUrl: "http://i.imgur.com/p6oG4sy.jpg"
+        },
+        {
+            Location: "Koh Samui",
+            DateTime: "2013-04-15T00:00:00.000Z",
+            Longitude: 100.01359290,
+            Latitude: 9.51201680,
+            Description: "Koselig bilde fra Koh Samui",
+            ImageUrl: "http://i.imgur.com/FEQMih5.jpg"
+        }
+    ]
+}

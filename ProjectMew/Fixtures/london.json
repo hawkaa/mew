@@ -1,0 +1,21 @@
+﻿{
+    Title: "London med Marte",
+    Events: [
+        {
+            Location: "Big Ben",
+            DateTime: "2014-06-01T00:00:00.000Z",
+            Longitude: -0.126236,
+            Latitude: 51.500152,
+            Description: "Her er et bilde av Big Ben",
+            ImageUrl: "http://cdn.londonandpartners.com/visit/london-organisations/big-ben/63602-640x360-bigben_tilt_640.jpg"
+        },
+        {
+            Location: "Tower of London",
+            DateTime: "2014-06-02T00:00:00.000Z",
+            Longitude: -0.076188,
+            Latitude: 51.507937,
+            Description: "Her er et bilde av Tower of London",
+            ImageUrl: "https://upload.wikimedia.org/wikipedia/commons/f/f0/Tower_of_London_White_Tower.jpg"
+        }
+    ]
+}
