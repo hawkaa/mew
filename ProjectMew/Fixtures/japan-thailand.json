@@ -1,29 +1,63 @@
 ﻿{
-    Title: "Tur til Japan og Thailand med Datateknikk",
-    Events: [
-        {
-            Location: "Tokyo",
-            DateTime: "2013-04-01T00:00:00.000Z",
-            Longitude: 139.69,
-            Latitude: 35.68,
-            Description: "Her ser du Thea og meg i Tokyo.",
-            ImageUrl: "http://i.imgur.com/752cORC.jpg"
-        },
-        {
-            Location: "Kyoto",
-            DateTime: "2013-04-10T00:00:00.000Z",
-            Longitude: 135.75,
-            Latitude: 35.02,
-            Description: "På vei opp til templene.",
-            ImageUrl: "http://i.imgur.com/p6oG4sy.jpg"
-        },
-        {
-            Location: "Koh Samui",
-            DateTime: "2013-04-15T00:00:00.000Z",
-            Longitude: 100.01359290,
-            Latitude: 9.51201680,
-            Description: "Koselig bilde fra Koh Samui",
-            ImageUrl: "http://i.imgur.com/FEQMih5.jpg"
-        }
-    ]
+  Title: "Tur til Japan og Thailand med Datateknikk",
+  Events: [
+    {
+      Location: "Tokyo",
+      DateTime: "2013-04-01T00:00:00.000Z",
+      Longitude: 139.69,
+      Latitude: 35.68,
+      Description: "Her ser du Thea og meg i Tokyo.",
+      ImageUrl: "http://i.imgur.com/752cORC.jpg"
+    },
+    {
+      Location: "Kyoto",
+      DateTime: "2013-04-10T00:00:00.000Z",
+      Longitude: 135.75,
+      Latitude: 35.02,
+      Description: "På vei opp til templene.",
+      ImageUrl: "http://i.imgur.com/p6oG4sy.jpg"
+    },
+    {
+      Location: "Koh Samui",
+      DateTime: "2013-04-15T00:00:00.000Z",
+      Longitude: 100.01359290,
+      Latitude: 9.51201680,
+      Description: "Koselig bilde fra Koh Samui",
+      ImageUrl: "http://i.imgur.com/FEQMih5.jpg"
+    }
+  ]
 }
+
+{
+  Title: "Safari i Tanzania",
+  Events: [
+    {
+      Location: "Bomani",
+      DateTime: "2012-03-01T00:00:00.000Z",
+      Longitude: -6.4791,
+      Latitude: 38.99,
+      Description: "Tur i nærmeste landsby.",
+      ImageUrl: "http://imgur.com/xtQVgb7"
+    },
+    {
+      Location: "Tanzania",
+      DateTime: "2013-03-10T00:00:00.000Z",
+      Longitude: -7.114,
+      Latitude: 34.586,
+      Description: "Elefantrumper.",
+      ImageUrl: "http://imgur.com/VFovcs2"
+    },
+    {
+      Location: "Zanzibar",
+      DateTime: "2013-03-06T00:00:00.000Z",
+      Longitude: -6.0685,
+      Latitude: 39.2545,
+      Description: "Idylliske tilstander på stranden.",
+      ImageUrl: "http://imgur.com/Hd01fpt"
+    }
+  ]
+}
+
+
+
+
