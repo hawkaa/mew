@@ -49,8 +49,33 @@ App.run = function run() {
             }
         });
     });
-
 };
+
+App.setupEventListeners = function setupEventListeners() {
+    var that = this;
+    $('#map').on('click', '.popup-image', function () {
+        var cid = $(this).data('event-id');
+        var event = $.grep(that.activeTrip.events, function(n, i) {
+            return n.cid == cid;
+        })[0].attributes;
+        console.log(event);
+        that.showModal(event);
+    });
+
+    $('body').on('hidden.bs.modal', '.modal', function () {
+        $(this).removeData('bs.modal');
+    });
+}
+
+App.showModal = function showModal(event) {
+
+    var modalContent = "<div class='modal-img-wrapper'><img class='modal-img' src='" + event.imgUrl + "' /></div>"
+                        + "<div class='modal-time-and-place'>" + event.date + ", " + event.location + "</div>"
+                        + "<div class='modal-description'>" + event.description + "</div></div>";
+
+    $('.modal-content').html(modalContent);
+    $('#test-modal').modal('show');
+}
 
 App.zoomToBounds = function zoomToBounds(bounds) {
     var ret = $.Deferred();
@@ -84,19 +109,17 @@ App.showPopups = function showPopups() {
     var layers = [];
     $.each(this.activeTrip.events, function () {
         var layer = L.popup({
-            className: 'img-popup',
-            closeButton: false,
-            closeOnClick: false
-        })
-        .setLatLng(this.getCoordinates())
-        .setContent('<img src="' + this.get('imgUrl') + '" />');
+                className: 'img-popup',
+                closeButton: false,
+                closeOnClick: false
+            })
+            .setLatLng(this.getCoordinates())
+            .setContent('<img data-event-id="' + this.cid + '" class="popup-image" data-toggle="modal" data-target="#test-modal" src="' + this.get('imgUrl') + '" />');
         layers.push(layer);
-
     });
     this.activePopupsLayer = L.layerGroup(layers);
     console.log(this.activePopupsLayer);
     this.map.addLayer(this.activePopupsLayer);
-
 };
 
 App.zoomToTrip = function zoomToTrip() {
@@ -130,6 +153,7 @@ App.zoomToTrip = function zoomToTrip() {
 
 App.setup = function setup() {
     L.Icon.Default.imagePath = '/Content/images';
+    this.setupEventListeners();
 };
 
 App.loadTrips = function loadTrips() {
