@@ -13,6 +13,7 @@
             'leaflet': __dirname + '/../leaflet.js',
             'makimarkers': __dirname + '/../Leaflet.MakiMarkers.js',
             'snakeanim': __dirname + '/../L.Polyline.SnakeAnim.js',
+            'moment': __dirname + '/../moment.js'
         }
     }
 }
